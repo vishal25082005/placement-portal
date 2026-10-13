@@ -1,0 +1,58 @@
+function Applications() {
+  const applications = [
+    {
+      company: 'PRAVEEN PVT.LMTD Company',
+      role: 'Cloud Engineer Intern',
+      date: '13 Oct 2026',
+      status: 'Under Review',
+    },
+    {
+      company: 'Sample Technologies',
+      role: 'DevOps Intern',
+      date: '12 Oct 2026',
+      status: 'Applied',
+    },
+  ]
+
+  return (
+    <main className="container py-5">
+      <h1 className="fw-semibold">My applications</h1>
+
+      <p className="text-secondary mb-4">
+        Track the progress of your job applications.
+      </p>
+
+      <div className="card border-0 shadow-sm">
+        <div className="table-responsive">
+          <table className="table table-hover align-middle mb-0">
+            <thead className="table-light">
+              <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Date applied</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {applications.map((application) => (
+                <tr key={application.company}>
+                  <td>{application.company}</td>
+                  <td>{application.role}</td>
+                  <td>{application.date}</td>
+                  <td>
+                    <span className="badge text-bg-primary">
+                      {application.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  )
+}
+
+export default Applications
